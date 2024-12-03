@@ -1,0 +1,3803 @@
+openapi: 3.0.0
+info:
+  title: ESFiller API
+  description: ESFiller API documentation
+  contact:
+    email: jinzhong@altomni.com
+  version: 3.4.3
+servers:
+- url: http://localhost:5050/
+paths:
+  /company/{_tenant_id}/{_type}/{_id}:
+    post:
+      tags:
+      - "FAKE HTTP API, use rabbmitMQ"
+      - company
+      summary: rabbitmq root parameters
+      parameters:
+      - name: _tenant_id
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      - name: _type
+        in: path
+        description: always company
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      - name: _id
+        in: path
+        description: "accept \"[0-9]+\""
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+          format: "[0-9]+"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/company'
+      responses:
+        "200":
+          description: OK
+  /agency/{_tenant_id}/{_type}/{_id}:
+    post:
+      tags:
+      - "FAKE HTTP API, use rabbmitMQ"
+      - agency
+      summary: rabbitmq root parameters
+      parameters:
+      - name: _tenant_id
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      - name: _type
+        in: path
+        description: always agency
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      - name: _id
+        in: path
+        description: "accept \"[0-9]+\""
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+          format: "[0-9]+"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/agency'
+      responses:
+        "200":
+          description: OK
+  /job/{_tenant_id}/{_type}/{_id}:
+    post:
+      tags:
+      - "FAKE HTTP API, use rabbmitMQ"
+      - job
+      summary: rabbitmq root parameters
+      parameters:
+      - name: _tenant_id
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      - name: _type
+        in: path
+        description: always job
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      - name: _id
+        in: path
+        description: "accept \"[0-9]+\""
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+          format: "[0-9]+"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/job'
+      responses:
+        "200":
+          description: OK
+  /agency_job/{_tenant_id}/{_type}/{_id}:
+    post:
+      tags:
+      - "FAKE HTTP API, use rabbmitMQ"
+      - job
+      summary: rabbitmq root parameters
+      parameters:
+      - name: _tenant_id
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      - name: _type
+        in: path
+        description: always agency_job
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      - name: _id
+        in: path
+        description: "accept \"[0-9]+\""
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+          format: "[0-9]+"
+      requestBody:
+        description: "Same as apn job request body"
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/job'
+      responses:
+        "200":
+          description: OK
+  /talent/{_tenant_id}/{_type}/{_id}/:
+    post:
+      tags:
+      - "FAKE HTTP API, use rabbmitMQ"
+      - talent
+      summary: rabbitmq root parameters
+      parameters:
+      - name: _tenant_id
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      - name: _type
+        in: path
+        description: always talent
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      - name: _id
+        in: path
+        description: "accept \"[0-9]+\""
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+          format: "[0-9]+"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/talent'
+      responses:
+        "200":
+          description: OK
+  /uoffer_client/{_type}/{_id}/:
+    post:
+      tags:
+      - "FAKE HTTP API, use rabbmitMQ"
+      - uoffer
+      summary: rabbitmq root parameters
+      parameters:
+      - name: _type
+        in: path
+        description: always uoffer_client
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      - name: _id
+        in: path
+        description: "accept \"[0-9]+\""
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+          format: "[0-9]+"
+      - name: _deleted
+        in: query
+        description: "delete doc, true or false"
+        required: false
+        style: form
+        explode: false
+        schema:
+          type: boolean
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/uoffer_leads'
+      responses:
+        "200":
+          description: OK
+  /apn_user/{_type}/{_id}:
+    post:
+      tags:
+      - "FAKE HTTP API, use rabbmitMQ"
+      - user
+      summary: rabbitmq root parameters
+      parameters:
+      - name: _type
+        in: path
+        description: always apn_user
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      - name: _id
+        in: path
+        description: "accept \"[0-9]+\""
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+          format: "[0-9]+"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/user'
+      responses:
+        "200":
+          description: OK
+  /company_client_note/{_tenant_id}/{_type}/{_id}:
+    post:
+      tags:
+      - "FAKE HTTP API, use rabbmitMQ"
+      - company_note
+      summary: rabbitmq root parameters
+      parameters:
+      - name: _tenant_id
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      - name: _type
+        in: path
+        description: always company_client_note
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      - name: _id
+        in: path
+        description: "accept \"[0-9]+\""
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+          format: "[0-9]+"
+      - name: _deleted
+        in: query
+        description: "delete doc, true or false"
+        required: false
+        style: form
+        explode: false
+        schema:
+          type: boolean
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/company_client_note'
+      responses:
+        "200":
+          description: OK
+  /company_progress_note/{_tenant_id}/{_type}/{_id}:
+    post:
+      tags:
+      - "FAKE HTTP API, use rabbmitMQ"
+      - company_note
+      summary: rabbitmq root parameters
+      parameters:
+      - name: _tenant_id
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      - name: _type
+        in: path
+        description: always company_progress_note
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      - name: _id
+        in: path
+        description: "accept \"[0-9]+\""
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+          format: "[0-9]+"
+      - name: _deleted
+        in: query
+        description: "delete doc, true or false"
+        required: false
+        style: form
+        explode: false
+        schema:
+          type: boolean
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/company_progress_note'
+      responses:
+        "200":
+          description: OK
+  /filler/v3/common/unlock:
+    post:
+      tags:
+      - commondb
+      - HTTP API
+      summary: batch overwrite UnlockedByTenants in commondb
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties:
+                type: string
+                additionalProperties:
+                  type: array
+                  items:
+                    type: string
+              example:
+                _id1: ["tenant_id1", "tenant_id2"]
+                _id2: ["tenant_id1", "tenant_id2"]
+      responses:
+        "200":
+          description: OK
+        "206":
+          description: "Partial success. The status in failure_detail will only have two status codes of 410 and 500. 410 means that the id was not found at all, and it has been identified as dirty data and deleted. 500 represents other errors in the bulk process.There is no item when the status code is 410. When the status code is 404, there will be no index"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/unlockByTenantsAndFolderUpdateResponse"
+              example: {
+                        "total": 3,
+                        "success": 1,
+                        "failure": 2,
+                        "failure_detail": {
+                          "id1": {
+                            "status": 410,
+                            "reason": "_id not found"
+                          },
+                          "id2": {
+                            "index": "test",
+                            "status": 500,
+                            "reason": "[Algorithm Engineer]: version conflict, required seqNo [516], primary term [16]. current document has seqNo [519] and primary term [16]"
+                          }
+                        }
+                      }
+        "400":
+          description: input data is not acceptable
+        "406":
+          description: request body is incorrect
+        "500":
+          description: all other server errors
+    put:
+      tags:
+      - commondb
+      - HTTP API
+      summary: add UnlockedByTenants for single talent_id in commondb
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: string
+                  additionalProperties:
+                    type: array
+                    items:
+                      type: string
+              example:
+                _id1: ["tenant_id1", "tenant_id2"]
+      responses:
+        "200":
+          description: OK
+        "400":
+          description: input data is not acceptable
+        "406":
+          description: request body is incorrect
+        "410":
+          description: doc has been removed
+        "500":
+          description: all other server errors
+  /job_note/{_tenant_id}/{_type}/{_id}:
+    post:
+      tags:
+      - "FAKE HTTP API, use rabbmitMQ"
+      - job
+      summary: rabbitmq root parameters
+      parameters:
+      - name: _tenant_id
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      - name: _type
+        in: path
+        description: always job_note
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      - name: _id
+        in: path
+        description: "job_id, accept \"[0-9]+\""
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+          format: "[0-9]+"
+      - name: _deleted
+        in: query
+        description: "delete doc, true or false"
+        required: false
+        style: form
+        explode: false
+        schema:
+          type: boolean
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/job_note_with_deleted'
+      responses:
+        "200":
+          description: OK
+  /talent_note/{_tenant_id}/{_type}/{_id}:
+    post:
+      tags:
+      - "FAKE HTTP API, use rabbmitMQ"
+      - talent
+      summary: rabbitmq root parameters
+      parameters:
+      - name: _tenant_id
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      - name: _type
+        in: path
+        description: always talent_note
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      - name: _id
+        in: path
+        description: "talent_id, accept \"[0-9]+\""
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+          format: "[0-9]+"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/talent_note'
+      responses:
+        "200":
+          description: OK
+  
+  /:
+    get:
+      tags:
+      - HTTP API
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/readinessCheckResponse'
+  /filler/v3/officialize_location:
+    post:
+      tags:
+      - HTTP API
+      - location
+      summary: "Enter aws location to get official location"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/v3_officialize_location_body'
+      responses:
+        "200":
+          description: "Returns the officialized result. (If it is not resolved, the field with official will not exist and will be replaced by the corresponding input field. For example, if officialCity is not resolved, the city field will be returned instead of the officialCity field)"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_200'
+        "504":
+          description: "Geo Service Unavailable"
+  /filler/v3/apn/company/tenant/{tenant_id}/folder_update:
+    post:
+      tags:
+      - company
+      - HTTP API
+      summary: batch update the folders of talents
+      parameters:
+      - name: tenant_id
+        in: path
+        description: "accept \"[0-9]+\""
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+          format: "[0-9]+"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/folderUpdateBody'
+      responses:
+        "200":
+          description: OK
+        "206":
+          description: "Partial success. The status in failure_detail will have two status codes of 404 and 409. The backend must automatically wait for the 409 ids to be retried, which will be caused by multiple users operating a doc at the same time. If there is still 409 after several retries, roll back the database and report an error to the front end, Failed to add/remove folder, please try again later."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/unlockByTenantsAndFolderUpdateResponse'
+        "406":
+          description: "request body is incorrect, ids is required, from or to must\
+            \ be one, and cannot be equal"
+        "500":
+          description: all other server errors
+  /filler/v3/apn/talent/tenant/{tenant_id}/check_duplication:
+    post:
+      tags:
+      - talent
+      - HTTP API
+      summary: "SYNC check if the talent doc is duplicated. if not or may be not,\
+        \ return a permit code for insert. "
+      parameters:
+      - name: tenant_id
+        in: path
+        description: "accept \"[0-9]+\""
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      - name: ignoreTalentIds
+        in: query
+        description: "talent ids ignored during duplication check, use commas to separate"
+        schema:
+          type: string
+      - name: minSimilarity
+        in: query
+        description: "_similarity 小于 minSimilarity 的结果将不会返回，默认返回全部"
+        schema:
+          type: number
+      requestBody:
+        description: any valid json
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/talent_check_duplication'
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/duplicationCheckResponse'
+        "500":
+          description: all other server errors
+  /filler/v3/apn/talent/tenant/{tenant_id}/folder_update:
+    post:
+      tags:
+      - talent
+      - HTTP API
+      summary: batch update the folders of talents
+      parameters:
+      - name: tenant_id
+        in: path
+        description: "accept \"[0-9]+\""
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+          format: "[0-9]+"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/folderUpdateBody'
+      responses:
+        "200":
+          description: OK
+        "206":
+          description: "Partial success. The status in failure_detail will have two status codes of 404 and 409. The backend must automatically wait for the 409 ids to be retried, which will be caused by multiple users operating a doc at the same time. If there is still 409 after several retries, roll back the database and report an error to the front end, Failed to add/remove folder, please try again later."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/unlockByTenantsAndFolderUpdateResponse'
+        "406":
+          description: "request body is incorrect, ids is required, from or to must\
+            \ be one, and cannot be equal"
+        "500":
+          description: all other server errors
+  
+  /filler/v3/crm/business_search_company/tenant/{tenant_id}/folder_update:
+    post:
+      tags:
+      - crm
+      - HTTP API
+      summary: batch update the folders of business_search_companies
+      parameters:
+      - name: tenant_id
+        in: path
+        description: "accept \"[0-9]+\""
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+          format: "[0-9]+"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/folderUpdateBody'
+      responses:
+        "200":
+          description: OK
+        "206":
+          description: "Partial success. The status in failure_detail will have two status codes of 404 and 409. The backend must automatically wait for the 409 ids to be retried, which will be caused by multiple users operating a doc at the same time. If there is still 409 after several retries, roll back the database and report an error to the front end, Failed to add/remove folder, please try again later."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/unlockByTenantsAndFolderUpdateResponse'
+        "406":
+          description: "request body is incorrect, ids is required, from or to must\
+            \ be one, and cannot be equal"
+        "500":
+          description: all other server errors
+  
+  /filler/v3/crm/financing_event/tenant/{tenant_id}/folder_update:
+    post:
+      tags:
+      - crm
+      - HTTP API
+      summary: batch update the folders of financing_events
+      parameters:
+      - name: tenant_id
+        in: path
+        description: "accept \"[0-9]+\""
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+          format: "[0-9]+"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/folderUpdateBody'
+      responses:
+        "200":
+          description: OK
+        "206":
+          description: "Partial success. The status in failure_detail will have two status codes of 404 and 409. The backend must automatically wait for the 409 ids to be retried, which will be caused by multiple users operating a doc at the same time. If there is still 409 after several retries, roll back the database and report an error to the front end, Failed to add/remove folder, please try again later."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/unlockByTenantsAndFolderUpdateResponse'
+        "406":
+          description: "request body is incorrect, ids is required, from or to must\
+            \ be one, and cannot be equal"
+        "500":
+          description: all other server errors
+  
+  /filler/v3/crm/leads_company/tenant/{tenant_id}/folder_update:
+    post:
+      tags:
+      - crm
+      - HTTP API
+      summary: batch update the folders of leads_companies
+      parameters:
+      - name: tenant_id
+        in: path
+        description: "accept \"[0-9]+\""
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+          format: "[0-9]+"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/folderUpdateBody'
+      responses:
+        "200":
+          description: OK
+        "206":
+          description: "Partial success. The status in failure_detail will have two status codes of 404 and 409. The backend must automatically wait for the 409 ids to be retried, which will be caused by multiple users operating a doc at the same time. If there is still 409 after several retries, roll back the database and report an error to the front end, Failed to add/remove folder, please try again later."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/unlockByTenantsAndFolderUpdateResponse'
+        "406":
+          description: "request body is incorrect, ids is required, from or to must\
+            \ be one, and cannot be equal"
+        "500":
+          description: all other server errors
+  
+  /filler/v3/crm/account/tenant/{tenant_id}/folder_update:
+    post:
+      tags:
+      - crm
+      - HTTP API
+      summary: batch update the folders of accounts_companies
+      parameters:
+      - name: tenant_id
+        in: path
+        description: "accept \"[0-9]+\""
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+          format: "[0-9]+"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/folderUpdateBody'
+      responses:
+        "200":
+          description: OK
+        "206":
+          description: "Partial success. The status in failure_detail will have two status codes of 404 and 409. The backend must automatically wait for the 409 ids to be retried, which will be caused by multiple users operating a doc at the same time. If there is still 409 after several retries, roll back the database and report an error to the front end, Failed to add/remove folder, please try again later."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/unlockByTenantsAndFolderUpdateResponse'
+        "406":
+          description: "request body is incorrect, ids is required, from or to must\
+            \ be one, and cannot be equal"
+        "500":
+          description: all other server errors
+  
+  /filler/v3/crm/account_contact/tenant/{tenant_id}/folder_update:
+    post:
+      tags:
+      - crm
+      - HTTP API
+      summary: batch update the folders of accounts_contacts
+      parameters:
+      - name: tenant_id
+        in: path
+        description: "accept \"[0-9]+\""
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+          format: "[0-9]+"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/folderUpdateBody'
+      responses:
+        "200":
+          description: OK
+        "206":
+          description: "Partial success. The status in failure_detail will have two status codes of 404 and 409. The backend must automatically wait for the 409 ids to be retried, which will be caused by multiple users operating a doc at the same time. If there is still 409 after several retries, roll back the database and report an error to the front end, Failed to add/remove folder, please try again later."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/unlockByTenantsAndFolderUpdateResponse'
+        "406":
+          description: "request body is incorrect, ids is required, from or to must\
+            \ be one, and cannot be equal"
+        "500":
+          description: all other server errors
+  
+  /filler/v3/crm/leads_company/tenant/{tenant_id}/business_progress_update:
+    post:
+      tags:
+      - crm
+      - HTTP API
+      summary: batch update the business progress of leads companies
+      parameters:
+      - name: tenant_id
+        in: path
+        description: "accept \"[0-9]+\""
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+          format: "[0-9]+"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/leadsCompaniesBusinessProgressUpdateBody'
+      responses:
+        "200":
+          description: OK
+        "206":
+          description: "Partial success. The status in failure_detail will have two status codes of 404 and 409. The backend must automatically wait for the 409 ids to be retried, which will be caused by multiple users operating a doc at the same time. If there is still 409 after several retries, roll back the database and report an error to the front end, Failed to add/remove folder, please try again later."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/unlockByTenantsAndFolderUpdateResponse'
+        "406":
+          description: "request body is incorrect, ids is required, from or to must\
+            \ be one, and cannot be equal"
+        "500":
+          description: all other server errors
+  
+  /filler/v3/crm/business_search_company/tenant/{tenant_id}/business_progress_update:
+    post:
+      tags:
+      - crm
+      - HTTP API
+      summary: batch update the business progress of business search companies
+      parameters:
+      - name: tenant_id
+        in: path
+        description: "accept \"[0-9]+\""
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+          format: "[0-9]+"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/businessSearchCompaniesBusinessProgressUpdateBody'
+      responses:
+        "200":
+          description: OK
+        "206":
+          description: "Partial success. The status in failure_detail will have two status codes of 404 and 409. The backend must automatically wait for the 409 ids to be retried, which will be caused by multiple users operating a doc at the same time. If there is still 409 after several retries, roll back the database and report an error to the front end, Failed to add/remove folder, please try again later."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/unlockByTenantsAndFolderUpdateResponse'
+        "406":
+          description: "request body is incorrect, ids is required, from or to must\
+            \ be one, and cannot be equal"
+        "500":
+          description: all other server errors
+
+  
+  /leads_company/{_tenant_id}/{_type}/{_id}:
+    post:
+      tags:
+      - "FAKE HTTP API, use rabbmitMQ"
+      - crm
+      summary: rabbitmq root parameters
+      parameters:
+      - name: _tenant_id
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      - name: _type
+        in: path
+        description: always leads_company
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      - name: _id
+        in: path
+        description: "doc id (sales lead id)"
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/leads_company'
+      responses:
+        "200":
+          description: OK
+
+  
+  /crm_account/{_tenant_id}/{_type}/{_id}:
+    post:
+      tags:
+      - "FAKE HTTP API, use rabbmitMQ"
+      - crm
+      summary: rabbitmq root parameters
+      parameters:
+      - name: _tenant_id
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      - name: _type
+        in: path
+        description: always crm_account
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      - name: _id
+        in: path
+        description: "doc id"
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/account'
+      responses:
+        "200":
+          description: OK
+  
+  /leads_contact/{_tenant_id}/{_type}/{_id}:
+    post:
+      tags:
+      - "FAKE HTTP API, use rabbmitMQ"
+      - crm
+      summary: rabbitmq root parameters
+      parameters:
+      - name: _tenant_id
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      - name: _type
+        in: path
+        description: always leads_contact
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      - name: _id
+        in: path
+        description: "doc id"
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      - name: _deleted
+        in: query
+        description: "delete doc, true or false"
+        required: false
+        style: form
+        explode: false
+        schema:
+          type: boolean
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/leads_contact'
+      responses:
+        "200":
+          description: OK
+  
+  /crm_account_contact/{_tenant_id}/{_type}/{_id}:
+    post:
+      tags:
+      - "FAKE HTTP API, use rabbmitMQ"
+      - crm
+      summary: rabbitmq root parameters
+      parameters:
+      - name: _tenant_id
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      - name: _type
+        in: path
+        description: always crm_accounts_contact
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      - name: _id
+        in: path
+        description: "doc id"
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      - name: _deleted
+        in: query
+        description: "delete doc, true or false"
+        required: false
+        style: form
+        explode: false
+        schema:
+          type: boolean
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/crm_accounts_contact'
+      responses:
+        "200":
+          description: OK
+  /filler/v3/crm/accounts_contact/tenant/{tenant_id}/check_duplication:
+    post:
+      tags:
+      - crm
+      - HTTP API
+      summary: "SYNC check if the talent doc is duplicated. if not or may be not,\
+        \ return a permit code for insert. "
+      parameters:
+      - name: tenant_id
+        in: path
+        description: "accept \"[0-9]+\""
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      - name: ignoreContactIds
+        in: query
+        description: "contact ids ignored during duplication check, use commas to separate"
+        schema:
+          type: string
+      requestBody:
+        description: any valid json
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/crm_account_check_duplication'
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/crmAccountContactDuplicationCheckResponse'
+        "500":
+          description: all other server errors
+  /filler/v3/apn/job/tenant/{tenant_id}/status_update:
+    post:
+      tags:
+      - job
+      - HTTP API
+      summary: batch update statuses of jobs
+      parameters:
+      - name: tenant_id
+        in: path
+        description: "accept \"[0-9]+\""
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+          format: "[0-9]+"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ids:
+                  type: array
+                  description: job ids, required
+                  items:
+                    type: string
+                status:
+                  type: string
+                  enum:
+                  - 00:OPEN
+                  - 10:FILLED
+                  - 20:ONHOLD
+                  - 30:CLOSED
+                  description: job status, required
+                lastModifiedDate:
+                  type: string
+                  format: time "YYYY-MM-DDTHH:MM:SSZ"
+                  description: job lastModifiedDate, required
+      responses:
+        "200":
+          description: OK
+        "206":
+          description: Partial success
+        "406":
+          description: "request body is incorrect, ids, status, lastModifiedDate are required"
+        "500":
+          description: all other server errors
+  /filler/v3/split_location_string:
+    post:
+      tags:
+      - HTTP API
+      - location
+      summary: split location string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                location:
+                  type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/splitLocationStringResponse'
+        "406":
+          description: "location is required in request body."
+        "500":
+          description: all other server errors
+  /filler/v3/apn/talent/tenant/{tenant_id}/pre_submit_folder_update:
+    put:
+      tags:
+      - HTTP API
+      - talent
+      summary: update talents to foldersOfPreSubmitTalnts
+      parameters:
+      - name: tenant_id
+        in: path
+        description: "accept \"[0-9]+\""
+        required: true
+        schema:
+          type: integer
+          format: "[0-9]+"
+      requestBody:
+        content:
+          application/json:
+            schema:
+             $ref: '#/components/schemas/foldersOfPreSubmitTalentsUpdateBody'
+      responses:
+        "200":
+          description: OK
+        "206":
+          description: "Partial success. The status in failure_detail will have two status codes of 404 and 409. The backend must automatically wait for the 409 ids to be retried, which will be caused by multiple users operating a doc at the same time. If there is still 409 after several retries, roll back the database and report an error to the front end, Failed to add/remove folder, please try again later."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/unlockByTenantsAndFolderUpdateResponse'
+        "406":
+          description: "request body is incorrect, ids is required, from or to must\
+            \ be one, and cannot be equal"
+        "500":
+          description: all other server errors
+    patch:
+      tags:
+      - HTTP API
+      - talent
+      summary: delete talents from foldersOfPreSubmitTalnts
+      parameters:
+      - name: tenant_id
+        in: path
+        description: "accept \"[0-9]+\""
+        required: true
+        schema:
+          type: integer
+          format: "[0-9]+"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                jobId:
+                  type: string
+                folderId:
+                  type: string
+                talentIdsToRemove:
+                  type: array
+                  items:
+                    type: string
+      responses:
+        "200":
+          description: OK
+        "206":
+          description: "Partial success. The status in failure_detail will have two status codes of 404 and 409. The backend must automatically wait for the 409 ids to be retried, which will be caused by multiple users operating a doc at the same time. If there is still 409 after several retries, roll back the database and report an error to the front end, Failed to add/remove folder, please try again later."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/unlockByTenantsAndFolderUpdateResponse'
+        "406":
+          description: "request body is incorrect, ids is required, from or to must\
+            \ be one, and cannot be equal"
+        "500":
+          description: all other server errors
+  /filler/v3/apn/job/tenant/{tenant_id}/doc/{job_id}/folder_of_pre_submit_talents/{folder_id}}/:
+    put:
+      tags: 
+      - HTTP API
+      - job
+      summary: update foldersOfPreSubmitTalnts
+      parameters:
+      - name: tenant_id
+        in: path
+        description: "accept \"[0-9]+\""
+        required: true
+        schema:
+          type: integer
+          format: "[0-9]+"
+      - name: job_id
+        in: path
+        description: "accept \"[0-9]+\""
+        required: true
+        schema:
+          type: integer
+          format: "[0-9]+"
+      - name: folder_id
+        in: path
+        description: "accept \"[0-9a-z-_]+\""
+        required: true
+        schema:
+          type: string
+          format: "[0-9a-z-_]+"
+      requestBody:
+        content:
+          application/json:
+            schema:
+             $ref: '#/components/schemas/foldersOfPreSubmitTalentsAddFolderBody'
+      responses:
+        "200":
+          description: OK
+        "206":
+          description: "Partial success. The status in failure_detail will have two status codes of 404 and 409. The backend must automatically wait for the 409 ids to be retried, which will be caused by multiple users operating a doc at the same time. If there is still 409 after several retries, roll back the database and report an error to the front end, Failed to add/remove folder, please try again later."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/unlockByTenantsAndFolderUpdateResponse'
+        "406":
+          description: "request body is incorrect, ids is required, from or to must\
+            \ be one, and cannot be equal"
+        "500":
+          description: all other server errors
+    delete:
+      tags: 
+      - HTTP API
+      - job
+      summary: delete foldersOfPreSubmitTalnts
+      parameters:
+      - name: tenant_id
+        in: path
+        description: "accept \"[0-9]+\""
+        required: true
+        schema:
+          type: integer
+          format: "[0-9]+"
+      - name: job_id
+        in: path
+        description: "accept \"[0-9]+\""
+        required: true
+        schema:
+          type: integer
+          format: "[0-9]+"
+      - name: folder_id
+        in: path
+        description: "accept \"[0-9a-z-_]+\""
+        required: true
+        schema:
+          type: string
+          format: "[0-9a-z-_]+"
+      responses:
+        "200":
+          description: OK
+        "206":
+          description: "Partial success. The status in failure_detail will have two status codes of 404 and 409. The backend must automatically wait for the 409 ids to be retried, which will be caused by multiple users operating a doc at the same time. If there is still 409 after several retries, roll back the database and report an error to the front end, Failed to add/remove folder, please try again later."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/unlockByTenantsAndFolderUpdateResponse'
+        "406":
+          description: "request body is incorrect, ids is required, from or to must\
+            \ be one, and cannot be equal"
+        "500":
+          description: all other server errors
+  /filler/v3/apn/job/tenant/{tenant_id}/doc/{job_id}/folder_of_pre_submit_talents/{folder_id}}/annexed_by:
+    patch:
+      tags: 
+      - HTTP API
+      - job
+      summary: merge foldersOfPreSubmitTalnts
+      parameters:
+      - name: tenant_id
+        in: path
+        description: "accept \"[0-9]+\""
+        required: true
+        schema:
+          type: integer
+          format: "[0-9]+"
+      - name: job_id
+        in: path
+        description: "accept \"[0-9]+\""
+        required: true
+        schema:
+          type: integer
+          format: "[0-9]+"
+      - name: folder_id
+        in: path
+        description: "accept \"[0-9a-z-_]+\", removed folder"
+        required: true
+        schema:
+          type: string
+          format: "[0-9a-z-_]+"
+      requestBody:
+        content:
+          application/json:
+            schema:
+             $ref: '#/components/schemas/foldersOfPreSubmitTalentsMergeFolderBody'
+      responses:
+        "200":
+          description: OK
+        "206":
+          description: "Partial success. The status in failure_detail will have two status codes of 404 and 409. The backend must automatically wait for the 409 ids to be retried, which will be caused by multiple users operating a doc at the same time. If there is still 409 after several retries, roll back the database and report an error to the front end, Failed to add/remove folder, please try again later."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/unlockByTenantsAndFolderUpdateResponse'
+        "406":
+          description: "request body is incorrect, ids is required, from or to must\
+            \ be one, and cannot be equal"
+        "500":
+          description: all other server errors
+  /filler/v3/tenant/{tenant_id}/jobs_folder_update:
+    post:
+      tags:
+      - job
+      summary: batch update the folders of jobs
+      parameters:
+      - name: tenant_id
+        in: path
+        description: "accept \"[0-9]+\""
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+          format: "[0-9]+"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/folderUpdateBody'
+      responses:
+        "200":
+          description: OK
+        "206":
+          description: "Partial success. The status in failure_detail will have two status codes of 404 and 409. The backend must automatically wait for the 409 ids to be retried, which will be caused by multiple users operating a doc at the same time. If there is still 409 after several retries, roll back the database and report an error to the front end, Failed to add/remove folder, please try again later."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/unlockByTenantsAndFolderUpdateResponse'
+        "406":
+          description: "request body is incorrect, ids is required, from or to must\
+            \ be one, and cannot be equal"
+        "500":
+          description: all other server errors
+components:
+  schemas:
+    leads_company:
+      type: object
+      properties:
+        crmCommonEsId:
+          type: string
+        accountCompanyId:
+          type: string
+        rejectBDCompanyIds:
+          type: array
+          items:
+            type: string
+        similarBDCompanyIds:
+          type: array
+          items:
+            type: string
+        businessName:
+          type: string
+        tenantAliases:
+          type: array
+          items:
+            type: string
+        revenueRange:
+          type: object
+          properties:
+            lte:
+              type: number
+              description: less than or equal the number
+            gte:
+              type: number
+              description: greater than or equal the number
+        revenueCurrency:
+          type: string
+        employeeRange:
+          type: object
+          properties:
+            lte:
+              type: number
+              description: less than or equal the number
+            gte:
+              type: number
+              description: greater than or equal the number
+        registeredCapital:
+          type: string
+        legalRepresentative:
+          type: string
+        websites:
+          type: array
+          items:
+            type: string
+        foundingDate:
+          type: string
+        industries:
+          type: array
+          description: "a array of some industry name or a array of some industry id <- sql industries column, json dumps; Must be all names or all ids"
+          items:
+            oneOf:
+            - type: string
+            - type: integer
+            description: industry name (string) or industry id (int)
+        locations:
+          type: array
+          items:
+            $ref: '#/components/schemas/company_locations'
+        description:
+          type: string
+        companyKeywords:
+          type: array
+          items:
+            type: string
+        createdDate:
+          type: string
+          format: time "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+        lastModifiedDate:
+          type: string
+          format: time "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+        lastOwnerViewTime:
+          type: string
+          format: time "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+        latestNoteCreatedTime:
+          type: string
+          format: time "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+        latestEmailSendTime:
+          type: string
+          format: time "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+        tenantTags:
+          type: array
+          items:
+            type: object
+            properties:
+              content:
+                type: string
+              createdBy:
+                type: string
+        leadTags:
+          type: array
+          items:
+            type: object
+            properties:
+              content:
+                type: string
+              createdBy:
+                type: string
+        syncBDContacts:
+          description: "是否同步拓客联系人"
+          type: boolean
+        leadsCompanyId:
+          type: string
+        folders:
+          type: array
+          items:
+            type: string
+        projectId:
+          type: string
+        projectLeadPendingExpiryTime:
+          type: string
+          format: time "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+          description: 项目线索处理到期时间
+        projectLeadConvertClientExpiryTime:
+          type: string
+          format: time "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+          description: 项目线索转为客户到期时间
+        expectedDealExpiryTime:
+          type: string
+          format: time "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+          description: 预期成单到期日期
+        followUpStartTime:
+          type: string
+          format: time "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+        followUpExpiryTime:
+          type: string
+          format: time "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+        convertClientExpiryTime:
+          type: string
+          format: time "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+        bdInfos:
+          type: object
+          properties:
+            accountBusinessId:
+              type: string
+            accountBusinessName:
+              type: string
+            accountBusinessCreatedDate:
+              type: string
+              format: time "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+            serviceTypes:
+              type: array
+              items:
+                type: string
+            source:
+              type: string
+            latestFollowUpTime:
+              type: string
+              format: time "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+            businessProgress:
+              type: string
+            responsibility(0 to 9):
+              type: array
+              description: "This is a collection of keys whose actual name is \"responsibility0\"\
+                /.../\"responsibility9\", used to represent different roles. e.g. responsibility0\
+                \ = DM, responsibility1= 创建人之类的其他相关人员。"
+              items:
+                $ref: '#/components/schemas/company_responsibility0'
+        notes:
+          type: array
+          items:
+            type: object
+            properties:
+              opt:
+                type: string
+              text:
+                type: string
+              createdBy:
+                type: string
+    account:
+      type: object
+      properties:
+        crmCommonEsId:
+          type: string
+        apnAccountId:
+          type: string
+        leadsCompanyId:
+          type: string
+        rejectBDCompanyIds:
+          type: array
+          items:
+            type: string
+        similarBDCompanyIds:
+          type: array
+          items:
+            type: string
+        businessName:
+          type: string
+        aliases:
+          type: array
+          items:
+            type: string
+        revenueRange:
+          type: object
+          properties:
+            lte:
+              type: number
+              description: less than or equal the number
+            gte:
+              type: number
+              description: greater than or equal the number
+        revenueCurrency:
+          type: string
+        employeeRange:
+          type: object
+          properties:
+            lte:
+              type: number
+              description: less than or equal the number
+            gte:
+              type: number
+              description: greater than or equal the number
+        registeredCapital:
+          type: string
+        legalRepresentative:
+          type: string
+        websites:
+          type: array
+          items:
+            type: string
+        foundingDate:
+          type: string
+        industries:
+          type: array
+          description: "a array of some industry name or a array of some industry id <- sql industries column, json dumps; Must be all names or all ids"
+          items:
+            oneOf:
+            - type: string
+            - type: integer
+            description: industry name (string) or industry id (int)
+        locations:
+          type: array
+          items:
+            $ref: '#/components/schemas/company_locations'
+        contacts:
+          type: array
+          description: "与 talent 的 contacts 完全不同，将会保留在 doc 中"
+          items:
+            type: object
+            properties:
+              type:
+                type: string
+                description: "type 为 PHONE 时会从 details 生成 phonesFormatted"
+              details:
+                type: string
+                description: "完整的电话、邮箱或是链接"
+        description:
+          type: string
+        companyKeywords:
+          type: array
+          items:
+            type: string
+        lastCommonStorageUpdateTime:
+          type: string
+          format: time "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+        lastCommonStorageMainFieldUpdateTime:
+          type: string
+          format: time "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+        latestNoteCreatedTime:
+          type: string
+          format: time "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+        latestEmailSendTime:
+          type: string
+          format: time "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+        createdDate:
+          type: string
+          format: time "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+        lastModifiedDate:
+          type: string
+          format: time "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+        folders:
+          type: array
+          items:
+            type: string
+        status:
+          type: string
+        tenantTags:
+          type: array
+          items:
+            type: object
+            properties:
+              content:
+                type: string
+              createdBy:
+                type: string
+        bdInfos:
+          type: array
+          items:
+            type: object
+            properties:
+              accountBusinessId:
+                type: string
+              accountBusinessName:
+                type: string
+              salesLeadId:
+                type: string
+              affiliations:
+                type: array
+                items:
+                  type: string
+              businessProgress:
+                type: string
+              followUpStartTime:
+                type: string
+                format: time "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+              latestFollowUpTime:
+                type: string
+                format: time "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+              followUpExpiryTime:
+                type: string
+                format: time "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+              dealExpiryTime:
+                type: string
+                format: time "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+              createdDate:
+                type: string
+                format: time "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+              estimatedDealTime:
+                type: string
+                format: time "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+              dealTime:
+                type: string
+                format: time "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+              freedTime:
+                type: string
+                format: time "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+              serviceTypes:
+                type: array
+                items:
+                  type: string
+              source:
+                type: string
+              contracts:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    title:
+                      type: string
+                    startTime:
+                      type: string
+                      format: time "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+                    endTime:
+                      type: string
+                      format: time "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+              notes:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    opt:
+                      type: string
+                    text:
+                      type: string
+                    createdBy:
+                      type: string
+              responsibility(0 to 9):
+                type: array
+                description: "This is a collection of keys whose actual name is \"responsibility0\"\
+                  /.../\"responsibility9\", used to represent different roles. e.g. responsibility0\
+                  \ = DM, responsibility1= 创建人之类的其他相关人员。"
+                items:
+                  $ref: '#/components/schemas/company_responsibility0'
+    leads_contact:
+      type: object
+      allOf:
+        - type: object
+          properties:
+            salesLeadId:
+              type: string
+            updateByBusinessSearch:
+              description: 是否允许从拓客更新数据
+              type: boolean
+            tenantTags:
+              type: array
+              items:
+                type: object
+                properties:
+                  content:
+                    type: string
+                  createdBy:
+                    type: string
+            tags:
+              type: array
+              items:
+                type: string
+                description: 从拓客带过来的系统标签，不允许修改
+        - $ref: '#/components/schemas/talent'
+    crm_accounts_contact:
+      type: object
+      allOf:
+        - type: object
+          properties:
+            apnSyncStatus:
+              type: string
+              description: '可能的值："00:CONFLICT_WT_APN" 发生冲突, "01:MERGE_ONHOLD" 暂时没同步到 apn, "{apn_talent_id}" 已同步到 apn, doc 中没有 apnSyncStatus 字段代表没有发起过同步'
+            latestNoteCreatedTime:
+              type: string
+              format: time "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+            latestEmailSendTime:
+              type: string
+              format: time "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+            tenantTags:
+              type: array
+              items:
+                type: object
+                properties:
+                  content:
+                    type: string
+                  createdBy:
+                    type: string
+                  companyId:
+                    type: string
+            experiences:
+              type: array
+              description: "the talent experiences <- sql experiences column, json dumps"
+              items:
+                type: object
+                allOf:
+                  - $ref: '#/components/schemas/talent_experiences'
+                  - type: object
+                    properties:
+                      contactType:
+                        type: string
+                        description: 联系人类别
+                      latestFollowUpTime:
+                        type: string
+                        format: date-time
+                      bdInfos:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            accountBusinessId:
+                              type: string
+                            businessProgress:
+                              type: string
+                            accountBusinessName:
+                              type: string
+                            responsibility(0 to 9):
+                              type: array
+                              description: "This is a collection of keys whose actual name is \"responsibility0\"\
+                                /.../\"responsibility9\", used to represent different roles. e.g. responsibility0\
+                                \ = DM, responsibility1= 创建人之类的其他相关人员。"
+                              items:
+                                $ref: '#/components/schemas/company_responsibility0'
+        - $ref: '#/components/schemas/talent'
+    splitLocationStringResponse:
+      type: object
+      properties:
+        locations:
+          type: array
+          items:
+            type: object
+            properties:
+              city:
+                type: string
+                description: 'The content of the field will only be "exist" and the field will not appear if it is not recognized.'
+              procince:
+                type: string
+                description: 'The content of the field will only be "exist" and the field will not appear if it is not recognized.'
+              county:
+                type: string
+                description: 'The content of the field will only be "exist" and the field will not appear if it is not recognized.'
+              zipcode:
+                type: string
+                description: 'The content of the field will only be "exist" and the field will not appear if it is not recognized.'
+              country:
+                type: string
+                description: "Country code, such as CN, US, GB, JP... This field will not appear if it is not recognized"
+              addressLine:
+                type: string
+                description: 'The content of the field will only be "exist" and the field will not appear if it is not recognized.'
+      
+    unlockByTenantsAndFolderUpdateResponse:
+      type: object
+      properties:
+        total:
+          type: integer
+          description: number of ids
+          example: 3
+        success:
+          type: integer
+          description: The number of successful updates
+          example: 1
+        failure:
+          type: integer
+          description: Number of update failures
+          example: 2
+        failure_detail:
+          type: object
+          additionalProperties:
+            type: object
+            properties:
+              index:
+                type: string
+              status:
+                type: integer
+              reason:
+                type: string
+          example:
+            {
+              "id1": {
+                index: "test",
+                status: 404,
+                reason: "_id not found"
+              },
+              "id2": {
+                index: "test",
+                status: 409,
+                reason: "[Algorithm Engineer]: version conflict, required seqNo [516], primary term [16]. current document has seqNo [519] and primary term [16]"
+              }
+            }
+    folderUpdateBody:
+      type: object
+      properties:
+        ids:
+          type: array
+          description: document(talent/job/company) ids
+          items:
+            type: string
+        from:
+          type: array
+          description: folder_id to be removed. Only with "from" will cause the folder_id
+            removed from the required documents.
+          items:
+            type: string
+        to:
+          type: array
+          description: folder_id to be added. Only with "to" will cause the folder_id
+            added to the required documents.
+          items:
+            type: string
+    leadsCompaniesBusinessProgressUpdateBody:
+      type: object
+      properties:
+        lastModifiedDate:
+          type: string
+          format: time "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+        salesLeadInfos:
+          type: array
+          items:
+            type: object
+            properties:
+              salesLeadId:
+                type: string
+              projectId:
+                type: string
+              projectLeadPendingExpiryTime:
+                type: string
+                format: time "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+                description: "项目线索处理到期时间"
+              projectLeadConvertClientExpiryTime:
+                type: string
+                format: time "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+                description: "项目线索转为客户到期时间"
+              expectedDealExpiryTime:
+                type: string
+                format: time "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+                description: "预期成单到期日期"
+              followUpStartTime:
+                type: string
+                format: time "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+              followUpExpiryTime:
+                type: string
+                format: time "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+              convertClientExpiryTime:
+                type: string
+                format: time "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+              bdInfos:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    accountBusinessId:
+                      type: string
+                    accountBusinessName:
+                      type: string
+                    accountBusinessCreatedDate:
+                      type: string
+                      format: time "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+                    latestFollowUpTime:
+                      type: string
+                      format: time "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+                    businessProgress:
+                      type: string
+                    responsibility(0 to 9):
+                      type: array
+                      description: "This is a collection of keys whose actual name is \"responsibility0\"\
+                        /.../\"responsibility9\", used to represent different roles. e.g. responsibility0\
+                        \ = DM, responsibility1= 创建人之类的其他相关人员。"
+                      items:
+                        $ref: '#/components/schemas/company_responsibility0'
+    businessSearchCompaniesBusinessProgressUpdateBody:
+      type: object
+      properties:
+        companyInfos:
+          type: array
+          items:
+            type: object
+            properties:
+              companyId:
+                type: string
+                description: "拓客的 docId"
+              indexName:
+                type: string
+                description: "doc 所在的 ES index 的 name"
+              bdInfos:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    latestFollowUpTime:
+                      type: string
+                      format: time "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+                    businessProgress:
+                      type: string
+                    responsibility(0 to 9):
+                      type: array
+                      description: "This is a collection of keys whose actual name is \"responsibility0\"\
+                        /.../\"responsibility9\", used to represent different roles. e.g. responsibility0\
+                        \ = DM, responsibility1= 创建人之类的其他相关人员。"
+                      items:
+                        $ref: '#/components/schemas/company_responsibility0'
+    foldersOfPreSubmitTalentsUpdateBody:
+      type: object
+      allOf:
+        - type: object
+          properties:
+            jobId:
+              type: string
+            folderId:
+              type: string
+            talentIds:
+              type: array
+              items:
+                type: string
+        - type: object
+          properties:
+            talentFolderResponsibility:
+              type: object
+              properties:
+                responsibility(0 to 9):
+                  type: array
+                  description: "This is a collection of keys whose actual name is \"responsibility0\"\
+                    /.../\"responsibility9\", used to represent different roles."
+                  items:
+                    $ref: '#/components/schemas/company_responsibility0'
+    foldersOfPreSubmitTalentsMergeFolderBody:
+      type: object
+      allOf:
+        - type: object
+          properties:
+            mergeTo:
+              type: string
+              description: "the folderId that will be retained"
+        - $ref: '#/components/schemas/foldersOfPreSubmitTalentsAddFolderBody'
+    user:
+      type: object
+      allOf:
+        - type: object
+          properties:
+            primaryTeamId:
+              type: string
+              description: '主team'
+            secondaryTeamIds:
+              type: array
+              items:
+                type: string
+                description: '副team'
+            ancestralTeamIds:
+              type: array
+              items:
+                type: string
+                description: '主team的所有上级team，副team的所有上级team'
+        - $ref: '#/components/schemas/talent'
+    foldersOfPreSubmitTalentsAddFolderBody:
+      type: object
+      properties:
+        folderCreatedDate:
+          type: string
+        jobFolderResponsibility:
+          type: object
+          properties:
+            responsibility(0 to 9):
+              type: array
+              description: "This is a collection of keys whose actual name is \"responsibility0\"\
+                /.../\"responsibility9\", used to represent different roles."
+              items:
+                $ref: '#/components/schemas/company_responsibility0'
+    job_foldersOfPreSubmitTalents:
+      type: object
+      allOf:
+        - type: object
+          properties:
+            numberOfTalents:
+              type: integer
+            createdDate:
+              type: string
+        - $ref: '#/components/schemas/talent_foldersOfPreSubmitTalents'
+    talent_foldersOfPreSubmitTalents:
+      type: object
+      properties:
+        folderId:
+          type: string
+        jobId:
+          type: string
+        responsibility(0 to 9):
+          type: array
+          description: "This is a collection of keys whose actual name is \"responsibility0\"\
+            /.../\"responsibility9\", used to represent different roles."
+          items:
+            $ref: '#/components/schemas/company_responsibility0'
+    readinessCheckResponse:
+      type: object
+      properties:
+        hostName:
+          type: string
+        appName:
+          type: string
+          description: esfiller
+        version:
+          type: string
+    company_comment:
+      type: object
+      properties:
+        companyId:
+          type: string
+          description: the client company id
+        contactTypeId:
+          type: string
+          description: contact type id 联系类别id
+        clientContactName:
+          type: string
+          description: contact name 如果更新了候选人，esfiller会关联自动更新姓名，不需要额外call api
+        clientContactTypeId:
+          type: string
+          description: client contact type id 联系人类别id - 不可更改 - 也不涉及关联更新问题，如果以后可以更改，再加update_by_query
+        clientContactTalentId:
+          type: string
+          description: 客户联系人对应的talent id
+        salesLeadId:
+          type: string
+          description: "sales lead id, do not use it for company comment 只有销售线索说明才\
+            有这个字段"
+        message:
+          type: string
+          description: |
+            * save all comments of the company. Do not save sales lead comments. 不要把销售线索的进展说明存到这里。
+    talent_resume:
+      type: object
+      properties:
+        uuid:
+          type: string
+    talent_applications:
+      type: object
+      properties:
+        jobId:
+          type: string
+        lastNodeTypeId:
+          type: string
+          description: To ensure correct sorting, a two-digit id must be used.
+        recruitmentProcessId:
+          type: string
+        createdDate:
+          type: string
+          format: time "YYYY-MM-DDTHH:MM:SSZ"
+        lastModifiedDate:
+          type: string
+          format: time "YYYY-MM-DDTHH:MM:SSZ"
+        responsibility(0 to 19):
+          type: array
+          description: "This is a collection of keys whose actual name is \"responsibility0\"\
+            /.../\"responsibility19\", used to represent different roles. e.g. responsibility0\
+            \ = DM, responsibility1= 创建人之类的其他相关人员。"
+          items:
+            $ref: '#/components/schemas/company_responsibility0'
+    talent_note:
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/person_job_note'
+        - type: object
+          properties:
+            title:
+              type: string
+            contactType:
+              type: string
+            motivation:
+              type: string
+    job_note_with_deleted:
+      type: object
+      allOf:
+        - type: object
+          properties:
+            deleted:
+              type: boolean
+        - $ref: '#/components/schemas/person_job_note'
+    person_job_note:
+      type: object
+      properties:
+        id:
+          type: string
+          description: "note_id, required"
+        createdDate:
+          type: string
+          format: time "YYYY-MM-DDTHH:MM:SSZ"
+        lastModifiedDate:
+          type: string
+          format: time "YYYY-MM-DDTHH:MM:SSZ"
+          description: "required"
+        text:
+          type: string
+          description: "去掉格式标签后的string"
+        responsibility(0 to 9):
+          type: array
+          description: "This is a collection of keys whose actual name is \"responsibility0\"...\"responsibility9\", used to represent different roles."
+          items:
+            $ref: '#/components/schemas/company_and_talnet_notes_responsibility2'
+      
+    company_client_note:
+      type: object
+      properties:
+        clientContacts:
+          type: array
+          items:
+            type: object
+            properties:
+              clientContactId:
+                type: string
+        companyId:
+          type: string
+        createdDate:
+          type: string
+          format: time "YYYY-MM-DDTHH:MM:SSZ"
+        deleted:
+          type: boolean
+          description: "true or false. used to delete the company_note doc in es."
+        lastModifiedDate:
+          type: string
+          description: the last modfication time of this company note
+          format: time "YYYY-MM-DDTHH:MM:SSZ"
+        note:
+          type: string
+          description: the note used to search, store the note of the prospects and the converted result of the rich text note of the clients
+        responsibility(0 to 19):
+          type: array
+          description: "This is a collection of keys whose actual name is \"responsibility0\"\
+            /.../\"responsibility19\", used to represent different roles."
+          items:
+            $ref: '#/components/schemas/company_and_talnet_notes_responsibility2'
+        reminderTime:
+          type: string
+          format: time "YYYY-MM-DDTHH:MM:SSZ"
+          description: Will record the time in the calendar module
+        richTextNote:
+          type: string
+          description: rich text note of clients
+        lastContactDate:
+          type: string
+          format: time "YYYY-MM-DD"
+          description: for clients
+    company_progress_note:
+      type: object
+      properties:
+        clientContacts:
+          type: array
+          items:
+            type: object
+            properties:
+              clientContactId:
+                type: string
+        companyId:
+          type: string
+        createdDate:
+          type: string
+          format: time "YYYY-MM-DDTHH:MM:SSZ"
+        deleted:
+          type: boolean
+          description: "true or false. used to delete the company_note doc in es."
+        lastModifiedDate:
+          type: string
+          description: the last modfication time of this company note
+          format: time "YYYY-MM-DDTHH:MM:SSZ"
+        note:
+          type: string
+          description: the note used to search, store the note of the prospects and the converted result of the rich text note of the clients
+        responsibility(0 to 19):
+          type: array
+          description: "This is a collection of keys whose actual name is \"responsibility0\"\
+            /.../\"responsibility19\", used to represent different roles."
+          items:
+            $ref: '#/components/schemas/company_and_talnet_notes_responsibility2'
+        salesLeadId:
+          type: string
+          description: It will also be judged whether it is an client based on whether the salesLeadId exists
+        contactType:
+          type: string
+        contactTime:
+          type: string
+          format: time "YYYY-MM-DDTHH:MM:SSZ"
+          description: for prospects
+    company:
+      type: object
+      properties:
+        active:
+          type: boolean
+          description: whether the company is active
+        businessName:
+          type: string
+        aliases:
+          type: array
+          items:
+            type: string
+        crmCommonEsId:
+          type: string
+        contracts:
+          type: array
+          description: contract with client company
+          items:
+            $ref: '#/components/schemas/company_contracts'
+        createdDate:
+          type: string
+          format: time "YYYY-MM-DDTHH:MM:SSZ"
+        folders:
+          type: array
+          items:
+            type: string
+            description: |
+              "folder_id", e.g. "folder_110", "folder_111"
+        hasUnsignedSalesLead:
+          type: boolean
+          description: has unsigned sales lead, 开发中的客户不要填这个值
+        importance:
+          type: integer
+          description: "the lower, the less important. UI will map the integer to\
+            \ different displays. Here we only record the importance in numbers"
+          format: 0-100
+        industries:
+          type: array
+          description: "a array of some industry name or a array of some industry id <- sql industries column, json dumps; Must be all names or all ids"
+          items:
+            oneOf:
+            - type: string
+            - type: integer
+            description: industry name (string) or industry id (int)
+        lastModifiedDate:
+          type: string
+          description: the last modfication time of this company
+          format: time "YYYY-MM-DDTHH:MM:SSZ"
+        logo:
+          type: string
+          description: the company logo url (public)
+        locations:
+          type: array
+          items:
+            $ref: '#/components/schemas/company_locations'
+        numberOfContacts:
+          type: integer
+        phonesFormatted:
+          type: string
+          description: 'formatted phone: "{(\+country_code)\s(national_number)}"'
+        salesLeads:
+          type: array
+          description: |
+            All information about  *正在进行的* 销售线索进度, 不要传已经签约的销售线索进度(progressPercentage=120)
+            进展中客户有这个key
+          items:
+            $ref: '#/components/schemas/company_salesLeads'
+        serviceTypes:
+          type: array
+          description: 已签约的服务类型，如果是正式客户，serviceTypes必然有值。
+          items:
+            type: string
+        responsibility(0 to 19):
+          type: array
+          description: "This is a collection of keys whose actual name is \"responsibility0\"\
+            /.../\"responsibility19\", used to represent different roles. e.g. responsibility0\
+            \ = DM, responsibility1= 创建人之类的其他相关人员。"
+          items:
+            $ref: '#/components/schemas/company_responsibility0'
+        tenantTags:
+          type: array
+          items:
+            type: object
+            properties:
+              content:
+                type: string
+              createdBy:
+                type: string
+    agency:
+      type: object
+      properties:
+        
+              affiliations:
+                type: array
+                items:
+                  type: string
+        agencyName:
+          type: string
+          description: 招聘代理机构名称
+        active:
+          type: boolean
+        agencyContactName:
+          type: string
+          description: 代理负责人姓名
+        contacts:
+          type: array
+          items:
+            $ref: '#/components/schemas/talent_contacts'
+        createdDate:
+          type: string
+          format: time "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+        lastModifiedDate:
+          type: string
+          format: time "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+        note:
+          type: string
+          description: 招聘代理信息备注
+    job:
+      type: object
+      properties:
+        allowRemote:
+          type: boolean
+          description: whether remote working is allowed
+        affiliations:
+          type: array
+          description: which user/pteam the job belongs to
+          items:
+            type: string
+            format: "user_userid, team_teamid, all"
+        billRange:
+          $ref: '#/components/schemas/range'
+        billTimes:
+          type: number
+          description: number of months paid in a year
+        billCurrency:
+          type: string
+          description: get detailed information in https://intelliprogroup.larksuite.com/sheets/shtusox4jVTmx7yG7huKwOlKHEg?sheet=t7mKZr
+        billType:
+          type: string
+          description: get enum in https://intelliprogroup.larksuite.com/sheets/shtusox4jVTmx7yG7huKwOlKHEg?sheet=u4letX
+        clientContacts:
+          type: array
+          description: all client contacts related to this job. 这个job的联系人，注意是公司联系人的子集。
+          items:
+            $ref: '#/components/schemas/job_clientContacts'
+        code:
+          type: string
+          description: the code of the job
+        companyName:
+          type: string
+          description: the client company name
+        companyId:
+          type: string
+          description: the client company id
+        createdDate:
+          type: string
+          format: time "YYYY-MM-DDTHH:MM:SSZ"
+        crmCommonEsId:
+          type: string
+        currency:
+          type: string
+          description: get detailed information in https://intelliprogroup.larksuite.com/sheets/shtusox4jVTmx7yG7huKwOlKHEg?sheet=t7mKZr
+        currencyUSDExchangeRate:
+          type: number
+          description: "currency to USD rate, e.g. CNY is abount 6.5"
+          format: float
+        department:
+          type: string
+          description: the client department
+        endDate:
+          type: string
+          description: the end date of the contract job (contract job only)
+          format: date "YYYY-MM-DD"
+        experienceYearRange:
+          $ref: '#/components/schemas/job_experienceYearRange'
+        folders:
+          type: array
+          items:
+            type: string
+            description: |
+              "folder_id", e.g. "folder_110", "folder_111"
+        foldersOfPreSubmitTalents:
+          type: array
+          items:
+            $ref: '#/components/schemas/job_foldersOfPreSubmitTalents'
+        industries:
+          type: array
+          description: "a array of some industry name or a array of some industry id <- sql industries column, json dumps; Must be all names or all ids"
+          items:
+            oneOf:
+            - type: string
+            - type: integer
+            description: industry name (string) or industry id (int)
+        jobFunctions:
+          type: array
+          description: "a array of some job functions name  or a array of some job functions id <- sql jobFunctions column, json dumps;  Must be all names or all ids"
+          items:
+            oneOf:
+            - type: string
+            - type: integer
+            description: job functions name (string) or id (int)
+        lastActivityTime:
+          type: string
+          description: the last application submit time of this job
+          format: time "YYYY-MM-DDTHH:MM:SSZ"
+        lastSubmitInterviewTime:
+          type: string
+          description: the last submit to interview node time of this job
+          format: time "YYYY-MM-DDTHH:MM:SSZ"
+        lastModifiedDate:
+          type: string
+          description: the last modfication time of this job
+          format: time "YYYY-MM-DDTHH:MM:SSZ"
+        logo:
+          type: string
+          description: the company logo url (public)
+        locations:
+          type: array
+          items:
+            $ref: '#/components/schemas/company_locations'
+        maxSubmissions:
+          type: number
+          description: the maximum number of submit-to-client candidates of the job
+        minimumDegreeLevel:
+          type: string
+          description: "the name of the minimum degree level,  get detailed information\
+            \ in https://intelliprogroup.larksuite.com/sheets/shtusox4jVTmx7yG7huKwOlKHEg?sheet=e67b1b"
+        notes:
+          type: array
+          items:
+            $ref: '#/components/schemas/person_job_note'
+        openings:
+          type: number
+          description: the opening positions of the job
+        recruitmentProcessId:
+          type: string
+          description: 招聘流程 id
+        requiredLanguages:
+          type: array
+          description: the required languages of the work
+          items:
+            type: string
+            description: The backend must store all fields and get detailed information
+              in https://intelliprogroup.larksuite.com/sheets/shtusox4jVTmx7yG7huKwOlKHEg?sheet=LsQ0fZ
+        requirementText:
+          type: string
+        responsibilityText:
+          type: string
+        rawIndustryString:
+          type: string
+          description: the industry in which the company is located
+        requiredRawIndustryString:
+          type: string
+          description: the industry that the job expects candidates to require locate
+        preferredRawIndustryString:
+          type: string
+          description: the industry that the job expects candidates to prefer locate
+        preferredLanguages:
+          type: array
+          description: the preferred languages of the work
+          items:
+            type: string
+            description: The backend must store all fields and get detailed information
+              in https://intelliprogroup.larksuite.com/sheets/shtusox4jVTmx7yG7huKwOlKHEg?sheet=LsQ0fZ
+        preferredDegreeLevels:
+          type: array
+          description: "the preferred degree levels,  get detailed information in\
+            \ https://intelliprogroup.larksuite.com/sheets/shtusox4jVTmx7yG7huKwOlKHEg?sheet=e67b1b"
+          items:
+            type: string
+        requiredMajors:
+          type: array
+          items:
+            type: string
+            description: the major that the job require
+        requiredSkills:
+          type: array
+          items:
+            $ref: '#/components/schemas/job_requiredSkills'
+        preferredMajors:
+          type: array
+          items:
+            type: string
+            description: the major that the job require
+        preferredSkills:
+          type: array
+          items:
+            $ref: '#/components/schemas/job_requiredSkills'
+        payTimes:
+          type: number
+          description: number of months paid in a year
+        payType:
+          type: string
+          description: get enum in https://intelliprogroup.larksuite.com/sheets/shtusox4jVTmx7yG7huKwOlKHEg?sheet=u4letX
+        priority:
+          type: integer
+          description: "UI will map the integer to\
+            \ different displays. Here we only record the priority in numbers"
+        published:
+          type: boolean
+          description: whether publish this job to IPG official website
+        postingTime:
+          type: string
+          description: the posting time of this job
+          format: YYYY-MM-DDTHH:MM:SSZ
+        salaryRange:
+          $ref: '#/components/schemas/range'
+        sharedAgencies:
+          type: array
+          items:
+            type: string
+            description: job 共享给了哪些 agencies
+        sponsorWorkAuths:
+          type: array
+          description: an array of sponsor working authority
+          items:
+            type: string
+        startDate:
+          type: string
+          description: the start date of the job
+          format: date "YYYY-MM-DD"
+        status:
+          type: string
+          description: the job application status
+          format: get detailed information in https://app.zeplin.io/project/5c789366d391d651e7286d88/screen/613fbfc7724fb826906ce32d
+          enum:
+          - 00:OPEN
+          - 10:FILLED
+          - 20:ONHOLD
+          - 30:CLOSED
+        summaryText:
+          type: string
+        jobType:
+          type: string
+          example: "全职职位"
+          description: the type of the job
+        text:
+          type: string
+          description: the extracted/origin text of the jd
+        title:
+          type: string
+          description: the title of the work
+        sourceUrl:
+          type: string
+        responsibility(0-19):
+          type: array
+          description: "This is a collection of keys whose actual name is \"responsibility0\"\
+            /.../\"responsibility19\", used to represent different roles. e.g. responsibility0\
+            \ = DM, responsibility1= XX负责人,...."
+          items:
+            $ref: '#/components/schemas/company_responsibility0'
+    crm_account_check_duplication:
+      type: object
+      properties:
+          contacts:
+            type: array
+            description: a array of some contact & social network information <- sql
+              table
+            items:
+              $ref: '#/components/schemas/talent_contacts'
+    talent_check_duplication:
+      type: object
+      properties:
+        firstName:
+          type: string
+          description: first name -> sql column
+        lastName:
+          type: string
+          description: last name <- sql column
+        fullName:
+          type: string
+        nickName:
+          type: string
+        contacts:
+          type: array
+          description: a array of some contact & social network information <- sql
+            table
+          items:
+            $ref: '#/components/schemas/talent_contacts'
+        educations:
+          type: array
+          description: "the talent educations <- sql column, json dumps"
+          items:
+            $ref: '#/components/schemas/talent_educations'
+        experiences:
+          type: array
+          description: "the talent experiences <- sql experiences column, json dumps"
+          items:
+            $ref: '#/components/schemas/talent_experiences'
+        projects:
+          type: array
+          description: the talent projects <- sql projects column
+          items:
+            $ref: '#/components/schemas/talent_projects'
+        currentLocation:
+          $ref: '#/components/schemas/talent_location'
+        industries:
+          type: array
+          description: "a array of some industry name or a array of some industry id <- sql industries column, json dumps; Must be all names or all ids"
+          items:
+            oneOf:
+            - type: string
+            - type: integer
+            description: industry name (string) or industry id (int)
+        jobFunctions:
+          type: array
+          description: "a array of some job functions name  or a array of some job functions id <- sql jobFunctions column, json dumps;  Must be all names or all ids"
+          items:
+            oneOf:
+            - type: string
+            - type: integer
+            description: job functions name (string) or id (int)
+        languages:
+          type: array
+          description: "a array of some language name <- sql languages column, json\
+            \ dumps"
+          items:
+            type: string
+            description: language name
+        skills:
+          type: array
+          description: "the talent skills <- sql skills column, keep all keys"
+          items:
+            $ref: '#/components/schemas/talent_skills'
+    uoffer_leads:
+      type: object
+      allOf: 
+        - type: object
+          properties:
+            followUpStartTime:
+              description: "分配线索时间(跟进起始时间)"
+              type: string
+              format: date-time
+            priority:
+              description: "线索优先级, 枚举值"
+              type: string
+            resumes:
+              type: array
+              items:
+                type: object
+                properties:
+                  fileName: 
+                    type: string
+                  uuid:
+                    type: string
+            status:
+              description: "线索状态"
+              type: string
+            createdDate:
+              description: "线索创建时间"
+              type: string
+              format: date-time
+            latestFollowUpTime:
+              type: string
+              format: date-time
+            earliestFollowUpTime:
+              type: string
+              format: date-time
+            dealTime:
+              description: "成单时间, status 转为 won 时的时间"
+              type: string
+              format: date-time
+            preSalesStatus:
+              description: "售前线索状态, 枚举值"
+              type: string
+            leadsSource:
+              description: "线索来源，枚举值"
+              type: string
+            sourceDept:
+              description: "所属部门，枚举值"
+              type: string
+            preferredJobType:
+              description: "Position Type"
+              type: string
+            contracts:
+              type: array
+              items:
+                $ref: "#/components/schemas/uoffer_contract"
+        - $ref: '#/components/schemas/person'
+    uoffer_contract:
+      type: object
+      properties:
+        contractItemIds:
+          type: array
+          items:
+            type: string
+            description: "合同项目 id"
+        contractedDate:
+          type: string
+          format: date
+          description: "签单日期, 用户输入的、合同上所写的日期"
+        createdDate:
+          type: string
+          format: date-time
+          description: "合同的创建时间"
+        contractedAmount:
+          type: number
+          format: float
+          description: "合同金额"
+        currency:
+          type: string
+          description: "Currency type"
+        paymentAmount:
+          type: number
+          format: float
+          description: "付款金额"
+        grossProfit:
+          type: number
+          format: float
+          description: "毛利润"
+        profitMargin:
+          type: number
+          format: float
+          description: "利润率"
+        
+    talent:
+      type: object
+      properties:
+        affiliations:
+          type: array
+          description: which user/pteam/tenant folder the talent belongs to.
+          items:
+            type: string
+            format: "user_userid, team_teamid, all, folder_folderid"
+        applications:
+          type: array
+          description: talent 的流程相关信息
+          items:
+           $ref: '#/components/schemas/talent_applications'
+        availableDate:
+          type: string
+          description: the date when the talent could arrive at work place
+        birthDate:
+          type: string
+          description: birthDate
+          format: time "YYYY-MM-DD"
+        birthDay:
+          type: string
+          description: birthDay, only month day
+          format: time "MM-DD"
+        birthPlace:
+          type: string
+        birthYearRange:
+          $ref: '#/components/schemas/range'
+        certificates:
+          type: array
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+              starDate:
+                type: string
+                format: date
+              endDate:
+                type: string
+                format: date
+              url:
+                type: string
+        commondbSearchId:
+          description: "The id of the associated commondb talent"
+          type: string
+        createdDate:
+          type: string
+          description: when the talent profile is created.
+          format: time "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+        contacts:
+          type: array
+          description: a array of some contact & social network information <- sql
+            table
+          items:
+            $ref: '#/components/schemas/talent_contacts'
+        currency:
+          type: string
+          description: The currency of the previous settlement salary and get detailed
+            information in https://intelliprogroup.larksuite.com/sheets/shtusox4jVTmx7yG7huKwOlKHEg?sheet=t7mKZr
+            -> sql additional_info column
+        currencyUSDExchangeRate:
+          type: number
+          description: The exchange rate between the currency of the previous settlement
+            salary and the U.S. dollar  e.g. :6.5/1.0/0.8
+        currentLocation:
+          $ref: '#/components/schemas/talent_location'
+        educations:
+          type: array
+          description: "the talent educations <- sql column, json dumps"
+          items:
+            $ref: '#/components/schemas/talent_educations'
+        experiences:
+          type: array
+          description: "the talent experiences <- sql experiences column, json dumps"
+          items:
+            $ref: '#/components/schemas/talent_experiences'
+        firstName:
+          type: string
+          description: first name -> sql column
+        folders:
+          type: array
+          items:
+            type: string
+            description: |
+              "folder_id", e.g. "folder_110", "folder_111"
+        foldersOfPreSubmitTalents:
+          type: array
+          items:
+            $ref: '#/components/schemas/talent_foldersOfPreSubmitTalents'
+        fullName:
+          type: string
+        gender:
+          type: string
+          enum:
+            - "MALE"
+            - "FEMALE"
+        identificationCard:
+          type: string
+        industries:
+          type: array
+          description: "a array of some industry name or a array of some industry id <- sql industries column, json dumps; Must be all names or all ids"
+          items:
+            oneOf:
+            - type: string
+            - type: integer
+            description: industry name (string) or industry id (int)
+        jobFunctions:
+          type: array
+          description: "a array of some job functions name  or a array of some job functions id <- sql jobFunctions column, json dumps;  Must be all names or all ids"
+          items:
+            oneOf:
+            - type: string
+            - type: integer
+            description: job functions name (string) or id (int)
+        languages:
+          type: array
+          description: "a array of some language name <- sql languages column, json\
+            \ dumps"
+          items:
+            type: string
+            description: language name
+        lastName:
+          type: string
+          description: last name <- sql column
+        lastModifiedDate:
+          type: string
+          description: the last modfication time of this talent
+          format: time "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+        maritalStatus:
+          type: string
+          description: 婚姻状况
+          enum:
+            - "SINGLE"
+            - "MARRIED"
+            - "DIVORCED"
+            - "WIDOWED"
+        motivation:
+          type: string
+          enum:
+            - "10:ACTIVE"
+            - "20:ACTIVE_OVERSEAS_RETURNEE"
+            - "30:INACTIVE"
+            - "40:BLACKLISTED"
+        nameTitle:
+          type: string
+          description: "e.g. Dr. Prof. Mr."
+        nationality:
+          type: string
+          description: get detailed information in https://intelliprogroup.larksuite.com/sheets/shtusp1y8E0gma08UOc9jRrQKoe?sheet=12PXBb
+        nativePlace:
+          type: string
+          description: 籍贯
+        nickFirstName:
+          type: string
+        nickLastName:
+          type: string
+        nickName:
+          type: string
+        notes:
+          type: array
+          items:
+            $ref: '#/components/schemas/talent_note'
+        ownedByTenants:
+          type: string
+          description: tenant_id
+        preferences:
+          type: array
+          items:
+            type: object
+            properties:
+              salaryRange:
+                $ref: '#/components/schemas/range'
+              currency:
+                type: string
+                description: The currency of the previous settlement salary and get detailed
+                  information in https://intelliprogroup.larksuite.com/sheets/shtusox4jVTmx7yG7huKwOlKHEg?sheet=t7mKZr
+                  -> sql additional_info column
+              payTimes:
+                type: number
+                description: Number of salary payments per year <- sql additional_info column
+              payType:
+                type: string
+                description: Payment cycle of previous wages. and get detailed information
+                  in https://intelliprogroup.larksuite.com/sheets/shtusox4jVTmx7yG7huKwOlKHEg?sheet=u4letX
+                  <- sql additional_info column
+              location:
+                $ref: '#/components/schemas/talent_location'
+              industries:
+                type: array
+                description: "a array of some industry name or a array of some industry id <- sql industries column, json dumps; Must be all names or all ids"
+                items:
+                  oneOf:
+                  - type: string
+                  - type: integer
+                  description: industry name (string) or industry id (int)
+              title:
+                type: string
+        payTimes:
+          type: number
+          description: Number of salary payments per year <- sql additional_info column
+        payType:
+          type: string
+          description: Payment cycle of previous wages. and get detailed information
+            in https://intelliprogroup.larksuite.com/sheets/shtusox4jVTmx7yG7huKwOlKHEg?sheet=u4letX
+            <- sql additional_info column
+        preferredLocations:
+          type: array
+          description: an array of some preferred location <- sql additional_info
+            column
+          items:
+            $ref: '#/components/schemas/talent_location'
+        preferredPayTimes:
+          type: number
+          description: Number of salary payments per year <- sql additional_info column
+        preferredPayType:
+          type: string
+          description: get enum in https://intelliprogroup.larksuite.com/sheets/shtusox4jVTmx7yG7huKwOlKHEg?sheet=u4letX
+        preferredSalaryRange:
+          allOf:
+            - $ref: '#/components/schemas/range'
+            - description: "normalized from preferredSalaryRange, <- sql\
+              \ additional_info column"
+        preferredCurrency:
+          type: string
+          description: The currency of the previous settlement salary
+        preferredCurrencyUSDExchangeRate:
+          type: number
+          description: The exchange rate between the currency of the previous settlement
+            salary and the U.S. dollar
+        preferredTitle:
+          type: string
+          description: the preferred titles of the talent
+        projects:
+          type: array
+          description: the talent projects <- sql projects column
+          items:
+            $ref: '#/components/schemas/talent_projects'
+        resumes:
+          type: array
+          items: 
+            $ref: '#/components/schemas/talent_resume'
+        race:
+          type: string
+          description: 民族
+        registeredResidence:
+          type: string
+          description: 户口
+        salaryRange:
+          allOf:
+            - $ref: '#/components/schemas/range'
+            - description: "normalized from salaryRange <- sql additional_info\
+              \ column"
+        selfEvaluation:
+          type: string
+        skills:
+          type: array
+          description: "the talent skills <- sql skills column, keep all keys"
+          items:
+            $ref: '#/components/schemas/talent_skills'
+        source:
+          type: string
+          description: "the source of the talent, e.g. LinkedIn, Liepin, Campus Recruiting,\
+            \ etc."
+        sourceAgency:
+          type: string
+          description: 候选人来自于哪个 agency
+        skillsText:
+          type: string
+          description: the text description of the talent skills
+        text:
+          type: string
+          description: the extracted/origin text of the most recent resume <- sql
+            column
+        responsibility(0-19):
+          type: array
+          description: "This is a collection of keys whose actual name is \"responsibility0\"\
+            /.../\"responsibility19\", used to represent different roles. e.g. responsibility0\
+            \ = DM, responsibility1= XX负责人,...."
+          items:
+            $ref: '#/components/schemas/company_responsibility0'
+        workAuthorization:
+          type: string
+        reviewInfos:
+          type: array
+          items:
+            type: object
+            properties:
+              reviewedBy:
+                type: string
+                description: 'team_{team_id} or user_{user_id}'
+              reviewTime:
+                type: string
+                description: 'Completed 的数据前四位传 "9999"'
+                format: time "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+              lastModifiedDate:
+                type: string
+                description: the last modfication time of this reviewInfo
+                format: time "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+    person:
+      type: object
+      properties:
+        affiliations:
+          type: array
+          description: which user/pteam/tenant folder the talent belongs to.
+          items:
+            type: string
+            format: "user_userid, team_teamid, all, folder_folderid"
+        availableDate:
+          type: string
+          description: the date when the talent could arrive at work place
+        birthDate:
+          type: string
+          description: birthDate
+          format: time "YYYY-MM-DD"
+        createdDate:
+          type: string
+          description: when the talent profile is created.
+          format: time "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+        contacts:
+          type: array
+          description: a array of some contact & social network information <- sql
+            table
+          items:
+            $ref: '#/components/schemas/talent_contacts'
+        currency:
+          type: string
+          description: The currency of the previous settlement salary and get detailed
+            information in https://intelliprogroup.larksuite.com/sheets/shtusox4jVTmx7yG7huKwOlKHEg?sheet=t7mKZr
+            -> sql additional_info column
+        currentLocation:
+          $ref: '#/components/schemas/talent_location'
+        educations:
+          type: array
+          description: "the talent educations <- sql column, json dumps"
+          items:
+            $ref: '#/components/schemas/talent_educations'
+        experiences:
+          type: array
+          description: "the talent experiences <- sql experiences column, json dumps"
+          items:
+            $ref: '#/components/schemas/talent_experiences'
+        firstName:
+          type: string
+          description: first name -> sql column
+        folders:
+          type: array
+          items:
+            type: string
+            description: |
+              "folder_id", e.g. "folder_110", "folder_111"
+        fullName:
+          type: string
+        gender:
+          type: string
+          enum:
+            - "MALE"
+            - "FEMALE"
+        identificationCard:
+          type: string
+        industries:
+          type: array
+          description: "a array of some industry name or a array of some industry id <- sql industries column, json dumps; Must be all names or all ids"
+          items:
+            oneOf:
+            - type: string
+            - type: integer
+            description: industry name (string) or industry id (int)
+        jobFunctions:
+          type: array
+          description: "a array of some job functions name  or a array of some job functions id <- sql jobFunctions column, json dumps;  Must be all names or all ids"
+          items:
+            oneOf:
+            - type: string
+            - type: integer
+            description: job functions name (string) or id (int)
+        languages:
+          type: array
+          description: "a array of some language name <- sql languages column, json\
+            \ dumps"
+          items:
+            type: string
+            description: language name
+        lastName:
+          type: string
+          description: last name <- sql column
+        lastModifiedDate:
+          type: string
+          description: the last modfication time of this talent
+          format: time "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+        nickName:
+          type: string
+        notes:
+          type: array
+          items:
+            $ref: '#/components/schemas/person_job_note'
+        ownedByTenants:
+          type: string
+          description: tenant_id
+        payTimes:
+          type: number
+          description: Number of salary payments per year <- sql additional_info column
+        payType:
+          type: string
+          description: Payment cycle of previous wages. and get detailed information
+            in https://intelliprogroup.larksuite.com/sheets/shtusox4jVTmx7yG7huKwOlKHEg?sheet=u4letX
+            <- sql additional_info column
+        preferredLocations:
+          type: array
+          description: an array of some preferred location <- sql additional_info
+            column
+          items:
+            $ref: '#/components/schemas/talent_location'
+        preferredPayType:
+          type: string
+          description: get enum in https://intelliprogroup.larksuite.com/sheets/shtusox4jVTmx7yG7huKwOlKHEg?sheet=u4letX
+        preferredSalaryRange:
+          allOf:
+            - $ref: '#/components/schemas/range'
+            - description: "normalized from preferredSalaryRange, <- sql\
+              \ additional_info column"
+        preferredCurrency:
+          type: string
+          description: The currency of the previous settlement salary
+        preferredCurrencyUSDExchangeRate:
+          type: number
+          description: The exchange rate between the currency of the previous settlement
+            salary and the U.S. dollar
+        projects:
+          type: array
+          description: the talent projects <- sql projects column
+          items:
+            $ref: '#/components/schemas/talent_projects'
+        resumes:
+          type: array
+          items: 
+            $ref: '#/components/schemas/talent_resume'
+        salaryRange:
+          allOf:
+            - $ref: '#/components/schemas/range'
+            - description: "normalized from salaryRange <- sql additional_info\
+              \ column"
+        skills:
+          type: array
+          description: "the talent skills <- sql skills column, keep all keys"
+          items:
+            $ref: '#/components/schemas/talent_skills'
+        source:
+          type: string
+          description: "the source of the talent, e.g. LinkedIn, Liepin, Campus Recruiting,\
+            \ etc."
+        skillsText:
+          type: string
+          description: the text description of the talent skills
+        text:
+          type: string
+          description: the extracted/origin text of the most recent resume <- sql
+            column
+        responsibility(0-19):
+          type: array
+          description: "This is a collection of keys whose actual name is \"responsibility0\"\
+            /.../\"responsibility19\", used to represent different roles. e.g. responsibility0\
+            \ = DM, responsibility1= XX负责人,...."
+          items:
+            $ref: '#/components/schemas/company_responsibility0'
+        workAuthorization:
+          type: string
+    crmAccountContactDuplicationCheckResponse:
+      type: object
+      properties:
+        suspectedDuplications:
+          type: array
+          items:
+            type: object
+            properties:
+              _id:
+                type: string
+              _index:
+                type: string
+              _similarity:
+                type: number
+                format: float(0.0 - 1.0)
+              fullName:
+                type: string
+              companyName:
+                description: "最近一条工作经历的公司名"
+                type: string
+              title:
+                description: "最近一条工作经历的职位名"
+                type: string
+              lastModifiedDate:
+                type: string
+                format: date-time "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+              duplicateContacts:
+                type: object
+                description: "重复联系方式的数量"
+                properties:
+                  phones:
+                    type: integer
+                  emails:
+                    type: integer
+                  wechats:
+                    type: integer
+                  whatsApps:
+                    type: integer
+                  linkedIn:
+                    type: integer
+                  maiMai:
+                    type: integer
+                  github:
+                    type: integer
+                  unknownContacts:
+                    type: integer
+    duplicationCheckResponse:
+      type: object
+      properties:
+        suspectedDuplications:
+          type: array
+          items:
+            type: object
+            properties:
+              _id:
+                type: string
+              _index:
+                type: string
+              _similarity:
+                type: number
+                format: float(0.0 - 1.0)
+              fullName:
+                type: string
+              companyName:
+                description: "最近一条工作经历的公司名"
+                type: string
+              title:
+                description: "最近一条工作经历的职位名"
+                type: string
+              lastModifiedDate:
+                type: string
+                format: date-time "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+              duplicateContacts:
+                type: object
+                description: "重复联系方式的数量"
+                properties:
+                  phones:
+                    type: integer
+                  emails:
+                    type: integer
+                  wechats:
+                    type: integer
+                  whatsApps:
+                    type: integer
+                  linkedIn:
+                    type: integer
+                  maiMai:
+                    type: integer
+                  github:
+                    type: integer
+                  unknownContacts:
+                    type: integer
+              duplicateProfile:
+                type: object
+                description: "重复详细信息的数量"
+                properties:
+                  experiences:
+                    type: integer
+                  educations:
+                    type: integer
+                  projects:
+                    type: integer
+                  currentLocation:
+                    type: integer
+                  languages:
+                    type: integer
+                  skills:
+                    type: integer
+                  industries:
+                    type: integer
+                  jobFunctions:
+                    type: integer
+    v3_officialize_location_body:
+      type: object
+      properties:
+        addressLine:
+          type: string
+        city:
+          type: string
+        province:
+          type: string
+        county:
+          type: string
+        country:
+          type: string
+        zipCode:
+          type: string
+        coordinate:
+          type: array
+          items:
+            type: number
+          minItems: 2
+          maxItems: 2
+          example: [40.7128, -74.0060]
+        originDisplay:
+          type: string
+    inline_response_200:
+      type: object
+      properties:
+        officialCity:
+          type: string
+        officialCounty:
+          type: string
+        officialProvince:
+          type: string
+        officialZipcode:
+          type: string
+        zipcode:
+          type: string
+        officialCountry:
+          type: string
+        addressLine:
+          type: string
+        coordinate:
+          type: array
+          items:
+            type: number
+          minItems: 2
+          maxItems: 2
+          example: [40.7128, -74.0060]
+        timezone:
+          type: number
+        englishDisplay:
+          type: string
+        chineseDisplay:
+          type: string
+        originDisplay:
+          type: string
+        originDisplayPinYin:
+          type: string
+    user_transfer_update_es_body:
+      type: object
+      properties:
+        origin_user_id:
+          type: string
+          description: "required, id of the user to be transferred"
+        new_user_id:
+          type: string
+          description: "optinal, The user id after the transfer,if not set, only the\
+            \ original associated user is deleted"
+    company_contracts:
+      type: object
+      properties:
+        name:
+          type: string
+        endTime:
+          type: string
+          format: time "YYYY-MM-DDTHH:MM:SSZ"
+    company_locations:
+      type: object
+      properties:
+        location:
+          type: string
+        addressLine:
+          type: string
+        city:
+          type: string
+        province:
+          type: string
+        county:
+          type: string
+        zipcode:
+          type: string
+        country:
+          type: string
+    company_responsibility0:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+    company_responsibility1:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+      description: "如果以后需要，增加新的responsibility2,3... key"
+    company_and_talnet_notes_responsibility2:
+      type: object
+      properties:
+        id:
+          type: string
+    company_salesLeads:
+      type: object
+      properties:
+        estimatedDealDates:
+          type: string
+          description: estimated deal dates 预估交易时间
+          format: time "YYYY-MM-DD"
+        progressPercentages:
+          type: integer
+          description: "the company BD progress in percentage. If the business progress\
+            \ has been contracted, DO NOT save here. 不要传已经签约的销售线索进度。用户不想看，后台存着就好了。"
+          format: 0-100
+        serviceTypes:
+          type: array
+          items:
+            type: string
+        responsibility0:
+          type: array
+          items:
+            $ref: '#/components/schemas/company_responsibility0'
+        responsibility1:
+          type: array
+          items:
+            $ref: '#/components/schemas/company_responsibility1'
+    job_clientContacts:
+      type: object
+      properties:
+        clientContactId:
+          type: string
+          description: the talent-company relationship id
+        talentId:
+          type: string
+          description: the talent id
+    job_experienceYearRange:
+          $ref: '#/components/schemas/range'
+    job_requiredSkills:
+      type: object
+      properties:
+        id:
+          type: number
+          example: 0
+          description: The smaller the ID, the more important the skill is and the higher the requirements.
+        skillName:
+          type: string
+          example: Java
+          description: the name of the skill
+        proficiencies:
+          type: array
+          items:
+            type: string
+            nullable: true
+        yearRanges:
+          type: array
+          items:
+            allOf:
+            - type: object
+            - nullable: true
+            - $ref: '#/components/schemas/range'
+    talent_contacts:
+      type: object
+      properties:
+        contact:
+          type: string
+          description: contact information
+        type:
+          type: string
+          description: contact/social network type and get detailed information in
+            https://intelliprogroup.larksuite.com/sheets/shtusp1y8E0gma08UOc9jRrQKoe?sheet=15qQwD
+        deliverability: 
+          type: string
+          description: only available when type is EMAIL, the value indicates the sending risk, 
+            Defined in enum_email_deliverability
+    talent_location:
+      type: object
+      properties:
+        location:
+          type: string
+          description: user input location string
+        addressLine:
+          type: string
+          description: user selected location
+        city:
+          type: string
+          description: user selected location
+        province:
+          type: string
+          description: user selected location
+        county:
+          type: string
+          description: user selected location
+        zipcode:
+          type: string
+          description: user selected location
+        country:
+          type: string
+          description: user selected location
+      description: "current location <- sql column, json dumps"
+    talent_educations:
+      type: object
+      properties:
+        degreeLevel:
+          type: string
+        collegeName:
+          type: string
+        majorName:
+          type: string
+        startDate:
+          type: string
+          description: When this experience started
+        endDate:
+          type: string
+          description: When this experience ended
+          format: date "YYYY-MM-DD"
+        current:
+          type: boolean
+          description: if is current experience
+    talent_experiences:
+      type: object
+      properties:
+        id:
+          type: number
+        title:
+          type: string
+        companyName:
+          type: string
+        activeCompanyId:
+          type: string
+          description: "if the talent is an *ACTIVE* client contact, record the company\
+            \ id. 活跃联系人要存这个key"
+        companyId:
+          type: string
+          description: "if the talent is an *INACTIVE* client contact, record the\
+            \ company id. 活跃联系人不要存这个key"
+        activeCRMAccountId:
+          type: string
+          description: 候选人是crm客户的联系人
+        crmAccountId:
+          type: string
+          description: 候选人关联到了crm客户
+        startDate:
+          type: string
+          description: the experience start date
+          format: date "YYYY-MM-DD"
+        endDate:
+          type: string
+          description: the experience end date
+          format: date "YYYY-MM-DD"
+        description:
+          type: string
+          description: the description of the experience
+        department:
+          type: string
+        reportTo:
+          type: string
+        numberOfSubordinates:
+          type: number
+        jobType:
+          type: string
+        current:
+          type: boolean
+          description: whether it is current experience
+        location:
+          type: string
+        currency:
+          type: string
+        payTimes:
+          type: number
+        payType:
+          type: string
+        salaryRange:
+          allOf:
+          - $ref: '#/components/schemas/range'
+          - description: "normalized from salaryRange, per year USD salary <- sql additional_info\
+            \ column"
+    talent_projects:
+      type: object
+      properties:
+        title:
+          type: string
+        projectName:
+          type: string
+        startDate:
+          type: string
+          description: When this experience started
+          format: date "YYYY-MM-DD"
+        endDate:
+          type: string
+          description: When this experience ended
+          format: date "YYYY-MM-DD"
+        current:
+          type: boolean
+          description: if is current experience
+        description:
+          type: string
+          description: the description of the project
+        locations:
+          type: object
+          additionalProperties: false
+          properties:
+            location:
+              type: string
+    range:
+      type: object
+      properties:
+        lte:
+          type: number
+          description: less than or equal the number
+        gte:
+          type: number
+          description: greater than or equal the number
+    talent_skills:
+      type: object
+      properties:
+        id:
+          type: number
+        skillName:
+          type: string
+          description: the name of the skill
+        lastUsed:
+          type: string
+          description: the last used time of the skill
+          format: date
+        firstUsed:
+          type: string
+          description: the first used time of the skill
+          format: date
