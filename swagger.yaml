@@ -2458,11 +2458,10 @@ components:
     agency:
       type: object
       properties:
-        
-              affiliations:
-                type: array
-                items:
-                  type: string
+        affiliations:
+          type: array
+          items:
+            type: string
         agencyName:
           type: string
           description: 招聘代理机构名称
